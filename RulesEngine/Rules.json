@@ -1,0 +1,1742 @@
+[
+  {
+    "id": "f04f08b4.7716d8",
+    "type": "tab",
+    "label": "Schedules",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "5f5ac3ae.f5a4fc",
+    "type": "tab",
+    "label": "Motion",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "e8f44998.ba5178",
+    "type": "tab",
+    "label": "Garage One",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "493737aa.18b028",
+    "type": "tab",
+    "label": "Garage Two",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "e79f6a59.2fb2c8",
+    "type": "tab",
+    "label": "Presence",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "76a5baaa.2726a4",
+    "type": "openhab2-controller",
+    "z": "",
+    "name": "OpenHaB",
+    "protocol": "http",
+    "host": "localhost",
+    "port": "8080",
+    "path": "",
+    "username": "",
+    "password": ""
+  },
+  {
+    "id": "a74525aa.be7458",
+    "type": "openhab-v2-controller",
+    "z": "",
+    "name": "OpenHab",
+    "protocol": "http",
+    "host": "localhost",
+    "port": "8080",
+    "path": "",
+    "username": "",
+    "password": "",
+    "allowRawEvents": true
+  },
+  {
+    "id": "d9d3cca6.f15f6",
+    "type": "alexa-remote-account",
+    "z": "",
+    "name": "",
+    "authMethod": "proxy",
+    "proxyOwnIp": "192.168.1.10",
+    "proxyPort": "3456",
+    "cookieFile": "/home/openhabian/alexa",
+    "refreshInterval": "3",
+    "alexaServiceHost": "pitangui.amazon.com",
+    "amazonPage": "amazon.com",
+    "acceptLanguage": "en-US",
+    "userAgent": "",
+    "useWsMqtt": "on",
+    "autoInit": "on"
+  },
+  {
+    "id": "e2333429.0309b8",
+    "type": "bigtimer",
+    "z": "f04f08b4.7716d8",
+    "outtopic": "",
+    "outpayload1": "ON",
+    "outpayload2": "OFF",
+    "name": "Dusk to Dawn",
+    "lat": "47.653231",
+    "lon": "-117.092835",
+    "starttime": "5004",
+    "endtime": "5003",
+    "startoff": 0,
+    "endoff": 0,
+    "offs": "0",
+    "outtext1": "",
+    "outtext2": "",
+    "timeout": 1440,
+    "sun": true,
+    "mon": true,
+    "tue": true,
+    "wed": true,
+    "thu": true,
+    "fri": true,
+    "sat": true,
+    "jan": true,
+    "feb": true,
+    "mar": true,
+    "apr": true,
+    "may": true,
+    "jun": true,
+    "jul": true,
+    "aug": true,
+    "sep": true,
+    "oct": true,
+    "nov": true,
+    "dec": true,
+    "day1": 0,
+    "month1": 0,
+    "day2": 0,
+    "month2": 0,
+    "day3": 0,
+    "month3": 0,
+    "day4": 0,
+    "month4": 0,
+    "day5": 0,
+    "month5": 0,
+    "day6": 0,
+    "month6": 0,
+    "d1": 0,
+    "w1": 0,
+    "d2": 0,
+    "w2": 0,
+    "d3": 0,
+    "w3": 0,
+    "d4": 0,
+    "w4": 0,
+    "d5": 0,
+    "w5": 0,
+    "d6": 0,
+    "w6": 0,
+    "xday1": 0,
+    "xmonth1": 0,
+    "xday2": 0,
+    "xmonth2": 0,
+    "xday3": 0,
+    "xmonth3": 0,
+    "xday4": 0,
+    "xmonth4": 0,
+    "xday5": 0,
+    "xmonth5": 0,
+    "xday6": 0,
+    "xmonth6": 0,
+    "xd1": 0,
+    "xw1": 0,
+    "xd2": 0,
+    "xw2": 0,
+    "xd3": 0,
+    "xw3": 0,
+    "xd4": 0,
+    "xw4": 0,
+    "xd5": 0,
+    "xw5": 0,
+    "xd6": 0,
+    "xw6": 0,
+    "suspend": false,
+    "random": false,
+    "repeat": true,
+    "atstart": true,
+    "odd": false,
+    "even": false,
+    "x": 340,
+    "y": 60,
+    "wires": [
+      [
+        "c7c18f60.39097"
+      ],
+      [],
+      []
+    ]
+  },
+  {
+    "id": "b7a095bd.6db458",
+    "type": "openhab2-out",
+    "z": "f04f08b4.7716d8",
+    "name": "Front Porch",
+    "controller": "76a5baaa.2726a4",
+    "itemname": "FrontPorch_Switch",
+    "topic": "ItemCommand",
+    "payload": "",
+    "x": 770,
+    "y": 60,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "3ec64c7c.4d9b74",
+    "type": "change",
+    "z": "f04f08b4.7716d8",
+    "name": "set Evening",
+    "rules": [
+      {
+        "t": "set",
+        "p": "Evening",
+        "pt": "global",
+        "to": "payload=\"ON\"",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 550,
+    "y": 240,
+    "wires": [
+      [
+        "8cda0523.7d7828",
+        "9b9ecd52.5ba6b"
+      ]
+    ]
+  },
+  {
+    "id": "c04e59c9.cd1ea8",
+    "type": "change",
+    "z": "e79f6a59.2fb2c8",
+    "name": "set JessHome",
+    "rules": [
+      {
+        "t": "set",
+        "p": "JessHome",
+        "pt": "global",
+        "to": "payload=\"ON\"",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 500,
+    "y": 180,
+    "wires": [
+      [
+        "2c155b12.c0db04"
+      ]
+    ]
+  },
+  {
+    "id": "ddbe782b.edbb88",
+    "type": "openhab2-out",
+    "z": "e79f6a59.2fb2c8",
+    "name": "Jess Home",
+    "controller": "76a5baaa.2726a4",
+    "itemname": "jess_home",
+    "topic": "ItemCommand",
+    "payload": "",
+    "x": 310,
+    "y": 180,
+    "wires": [
+      [
+        "c04e59c9.cd1ea8"
+      ]
+    ]
+  },
+  {
+    "id": "11e764ca.e2b1fb",
+    "type": "openhab2-out",
+    "z": "e79f6a59.2fb2c8",
+    "name": "Tracy Home",
+    "controller": "76a5baaa.2726a4",
+    "itemname": "tracy_home",
+    "topic": "ItemCommand",
+    "payload": "",
+    "x": 330,
+    "y": 320,
+    "wires": [
+      [
+        "548ce348.36b28c"
+      ]
+    ]
+  },
+  {
+    "id": "548ce348.36b28c",
+    "type": "change",
+    "z": "e79f6a59.2fb2c8",
+    "name": "set TracyHome",
+    "rules": [
+      {
+        "t": "set",
+        "p": "TracyHome",
+        "pt": "global",
+        "to": "payload=\"ON\"",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 500,
+    "y": 320,
+    "wires": [
+      [
+        "1c0f1004.761"
+      ]
+    ]
+  },
+  {
+    "id": "4a5bce26.6ee75",
+    "type": "openhab2-out",
+    "z": "e79f6a59.2fb2c8",
+    "name": "",
+    "controller": "76a5baaa.2726a4",
+    "itemname": "vNotification",
+    "topic": "ItemCommand",
+    "payload": "",
+    "x": 910,
+    "y": 320,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "1c0f1004.761",
+    "type": "change",
+    "z": "e79f6a59.2fb2c8",
+    "name": "Create Message",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "payload=\"ON\" ? \"Tracy is home\" : \"Tracy left home\"\t ",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 680,
+    "y": 320,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "8cda0523.7d7828",
+    "type": "openhab2-out",
+    "z": "f04f08b4.7716d8",
+    "name": "Desk Lamp",
+    "controller": "76a5baaa.2726a4",
+    "itemname": "DeskLamp_Switch",
+    "topic": "ItemCommand",
+    "payload": "",
+    "x": 770,
+    "y": 220,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "e1d4bc89.b81f5",
+    "type": "openhab2-out",
+    "z": "e79f6a59.2fb2c8",
+    "name": "Mackenzie Home",
+    "controller": "76a5baaa.2726a4",
+    "itemname": "mackenzie_home",
+    "topic": "ItemCommand",
+    "payload": "",
+    "x": 330,
+    "y": 460,
+    "wires": [
+      [
+        "17ff33dd.175f0c"
+      ]
+    ]
+  },
+  {
+    "id": "17ff33dd.175f0c",
+    "type": "change",
+    "z": "e79f6a59.2fb2c8",
+    "name": "set MackenzieHome",
+    "rules": [
+      {
+        "t": "set",
+        "p": "MackenzieHome",
+        "pt": "global",
+        "to": "payload=\"ON\"",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 540,
+    "y": 460,
+    "wires": [
+      [
+        "4926cf9f.a0f51"
+      ]
+    ]
+  },
+  {
+    "id": "ad8f1af5.c8c388",
+    "type": "openhab2-out",
+    "z": "e79f6a59.2fb2c8",
+    "name": "",
+    "controller": "76a5baaa.2726a4",
+    "itemname": "vNotification",
+    "topic": "ItemCommand",
+    "payload": "",
+    "x": 970,
+    "y": 460,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "4926cf9f.a0f51",
+    "type": "change",
+    "z": "e79f6a59.2fb2c8",
+    "name": "Create Message",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "payload=\"ON\" ? \"Mackenzie is home\" : \"Mackenzie left home\"",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 740,
+    "y": 460,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "6ffecfd9.09e19",
+    "type": "openhab2-in",
+    "z": "e79f6a59.2fb2c8",
+    "name": "Tracy Home",
+    "controller": "76a5baaa.2726a4",
+    "itemname": "tracy_home",
+    "x": 250,
+    "y": 40,
+    "wires": [
+      [],
+      []
+    ]
+  },
+  {
+    "id": "2bdff731.c16ae8",
+    "type": "openhab2-in",
+    "z": "e79f6a59.2fb2c8",
+    "name": "Jess Home",
+    "controller": "76a5baaa.2726a4",
+    "itemname": "jess_home",
+    "x": 80,
+    "y": 40,
+    "wires": [
+      [],
+      []
+    ]
+  },
+  {
+    "id": "3b631e9f.71fb82",
+    "type": "openhab2-in",
+    "z": "e79f6a59.2fb2c8",
+    "name": "Mac Home",
+    "controller": "76a5baaa.2726a4",
+    "itemname": "mackenzie_home",
+    "x": 420,
+    "y": 40,
+    "wires": [
+      [],
+      []
+    ]
+  },
+  {
+    "id": "92577a26.8488a8",
+    "type": "openhab2-in",
+    "z": "e79f6a59.2fb2c8",
+    "name": "Jess's Phone Online",
+    "controller": "76a5baaa.2726a4",
+    "itemname": "Jess_Phone_Online",
+    "x": 110,
+    "y": 180,
+    "wires": [
+      [
+        "ddbe782b.edbb88"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "7a8d1eca.4a57e",
+    "type": "openhab2-in",
+    "z": "e79f6a59.2fb2c8",
+    "name": "Tracy's Phone Online",
+    "controller": "76a5baaa.2726a4",
+    "itemname": "Tracy_Phone_Online",
+    "x": 120,
+    "y": 320,
+    "wires": [
+      [
+        "11e764ca.e2b1fb"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "52f4217.09f56e",
+    "type": "openhab2-in",
+    "z": "e79f6a59.2fb2c8",
+    "name": "Mac's Phone Online",
+    "controller": "76a5baaa.2726a4",
+    "itemname": "Mackenzie_Phone_Online",
+    "x": 110,
+    "y": 460,
+    "wires": [
+      [
+        "e1d4bc89.b81f5"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "3b24c051.7f041",
+    "type": "bigtimer",
+    "z": "f04f08b4.7716d8",
+    "outtopic": "",
+    "outpayload1": "ON",
+    "outpayload2": "OFF",
+    "name": "Sunset to Night",
+    "lat": "47.653",
+    "lon": " -117.093",
+    "starttime": "5004",
+    "endtime": "1380",
+    "startoff": "-30",
+    "endoff": 0,
+    "offs": 0,
+    "outtext1": "",
+    "outtext2": "",
+    "timeout": 1440,
+    "sun": true,
+    "mon": true,
+    "tue": true,
+    "wed": true,
+    "thu": true,
+    "fri": true,
+    "sat": true,
+    "jan": true,
+    "feb": true,
+    "mar": true,
+    "apr": true,
+    "may": true,
+    "jun": true,
+    "jul": true,
+    "aug": true,
+    "sep": true,
+    "oct": true,
+    "nov": true,
+    "dec": true,
+    "day1": 0,
+    "month1": 0,
+    "day2": 0,
+    "month2": 0,
+    "day3": 0,
+    "month3": 0,
+    "day4": 0,
+    "month4": 0,
+    "day5": 0,
+    "month5": 0,
+    "day6": 0,
+    "month6": 0,
+    "d1": 0,
+    "w1": 0,
+    "d2": 0,
+    "w2": 0,
+    "d3": 0,
+    "w3": 0,
+    "d4": 0,
+    "w4": 0,
+    "d5": 0,
+    "w5": 0,
+    "d6": 0,
+    "w6": 0,
+    "xday1": 0,
+    "xmonth1": 0,
+    "xday2": 0,
+    "xmonth2": 0,
+    "xday3": 0,
+    "xmonth3": 0,
+    "xday4": 0,
+    "xmonth4": 0,
+    "xday5": 0,
+    "xmonth5": 0,
+    "xday6": 0,
+    "xmonth6": 0,
+    "xd1": 0,
+    "xw1": 0,
+    "xd2": 0,
+    "xw2": 0,
+    "xd3": 0,
+    "xw3": 0,
+    "xd4": 0,
+    "xw4": 0,
+    "xd5": 0,
+    "xw5": 0,
+    "xd6": 0,
+    "xw6": 0,
+    "suspend": false,
+    "random": false,
+    "repeat": false,
+    "atstart": true,
+    "odd": false,
+    "even": false,
+    "x": 340,
+    "y": 240,
+    "wires": [
+      [
+        "3ec64c7c.4d9b74"
+      ],
+      [],
+      []
+    ]
+  },
+  {
+    "id": "5bf91864.898348",
+    "type": "openhab2-out",
+    "z": "e79f6a59.2fb2c8",
+    "name": "",
+    "controller": "76a5baaa.2726a4",
+    "itemname": "vNotification",
+    "topic": "ItemCommand",
+    "payload": "",
+    "x": 910,
+    "y": 180,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "2c155b12.c0db04",
+    "type": "change",
+    "z": "e79f6a59.2fb2c8",
+    "name": "Create Message",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "payload=\"ON\" ? \"Jess is home\" : \"Jess left home\"\t ",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 680,
+    "y": 180,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "699979b9.242b28",
+    "type": "inject",
+    "z": "e79f6a59.2fb2c8",
+    "name": "",
+    "topic": "",
+    "payload": "Test Notification",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "x": 720,
+    "y": 40,
+    "wires": [
+      [
+        "969af6ce.578448"
+      ]
+    ]
+  },
+  {
+    "id": "969af6ce.578448",
+    "type": "openhab2-out",
+    "z": "e79f6a59.2fb2c8",
+    "name": "",
+    "controller": "76a5baaa.2726a4",
+    "itemname": "vNotification",
+    "topic": "ItemCommand",
+    "payload": "",
+    "x": 950,
+    "y": 40,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "9b9ecd52.5ba6b",
+    "type": "openhab2-out",
+    "z": "f04f08b4.7716d8",
+    "name": "Lamp",
+    "controller": "76a5baaa.2726a4",
+    "itemname": "Lamp_Switch",
+    "topic": "ItemCommand",
+    "payload": "",
+    "x": 750,
+    "y": 280,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "b9c7c2b5.c9c15",
+    "type": "bigtimer",
+    "z": "f04f08b4.7716d8",
+    "outtopic": "",
+    "outpayload1": "ON",
+    "outpayload2": "OFF",
+    "name": "Night to Sunrise",
+    "lat": "47.653",
+    "lon": " -117.093",
+    "starttime": "1380",
+    "endtime": "5003",
+    "startoff": "0",
+    "endoff": 0,
+    "offs": 0,
+    "outtext1": "",
+    "outtext2": "",
+    "timeout": 1440,
+    "sun": true,
+    "mon": true,
+    "tue": true,
+    "wed": true,
+    "thu": true,
+    "fri": true,
+    "sat": true,
+    "jan": true,
+    "feb": true,
+    "mar": true,
+    "apr": true,
+    "may": true,
+    "jun": true,
+    "jul": true,
+    "aug": true,
+    "sep": true,
+    "oct": true,
+    "nov": true,
+    "dec": true,
+    "day1": 0,
+    "month1": 0,
+    "day2": 0,
+    "month2": 0,
+    "day3": 0,
+    "month3": 0,
+    "day4": 0,
+    "month4": 0,
+    "day5": 0,
+    "month5": 0,
+    "day6": 0,
+    "month6": 0,
+    "d1": 0,
+    "w1": 0,
+    "d2": 0,
+    "w2": 0,
+    "d3": 0,
+    "w3": 0,
+    "d4": 0,
+    "w4": 0,
+    "d5": 0,
+    "w5": 0,
+    "d6": 0,
+    "w6": 0,
+    "xday1": 0,
+    "xmonth1": 0,
+    "xday2": 0,
+    "xmonth2": 0,
+    "xday3": 0,
+    "xmonth3": 0,
+    "xday4": 0,
+    "xmonth4": 0,
+    "xday5": 0,
+    "xmonth5": 0,
+    "xday6": 0,
+    "xmonth6": 0,
+    "xd1": 0,
+    "xw1": 0,
+    "xd2": 0,
+    "xw2": 0,
+    "xd3": 0,
+    "xw3": 0,
+    "xd4": 0,
+    "xw4": 0,
+    "xd5": 0,
+    "xw5": 0,
+    "xd6": 0,
+    "xw6": 0,
+    "suspend": false,
+    "random": false,
+    "repeat": false,
+    "atstart": true,
+    "odd": false,
+    "even": false,
+    "x": 340,
+    "y": 400,
+    "wires": [
+      [
+        "c70ba982.2ce9a8"
+      ],
+      [],
+      []
+    ]
+  },
+  {
+    "id": "c70ba982.2ce9a8",
+    "type": "change",
+    "z": "f04f08b4.7716d8",
+    "name": "set Night",
+    "rules": [
+      {
+        "t": "set",
+        "p": "Night",
+        "pt": "global",
+        "to": "payload=\"ON\"",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 540,
+    "y": 400,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "c7c18f60.39097",
+    "type": "change",
+    "z": "f04f08b4.7716d8",
+    "name": "set Dusk",
+    "rules": [
+      {
+        "t": "set",
+        "p": "Dusk",
+        "pt": "global",
+        "to": "payload=\"ON\"",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 540,
+    "y": 60,
+    "wires": [
+      [
+        "b7a095bd.6db458",
+        "dc833a3b.9c6678"
+      ]
+    ]
+  },
+  {
+    "id": "dc833a3b.9c6678",
+    "type": "link out",
+    "z": "f04f08b4.7716d8",
+    "name": "Dusk Timer",
+    "links": [
+      "37aea86c.d59e78",
+      "893c3b1e.ee71f8"
+    ],
+    "x": 715,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "c12a671a.a12158",
+    "type": "inject",
+    "z": "f04f08b4.7716d8",
+    "name": "",
+    "topic": "",
+    "payload": "ON",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "x": 90,
+    "y": 80,
+    "wires": [
+      [
+        "e2333429.0309b8"
+      ]
+    ]
+  },
+  {
+    "id": "3cad7468.060a3c",
+    "type": "alexa-remote-routine",
+    "z": "e8f44998.ba5178",
+    "name": "Alexa Door Open",
+    "account": "d9d3cca6.f15f6",
+    "routineNode": {
+      "type": "speak",
+      "payload": {
+        "type": "regular",
+        "text": {
+          "type": "str",
+          "value": "The garage door one is open"
+        },
+        "devices": [
+          "G090LF1072930UAG"
+        ]
+      }
+    },
+    "x": 670,
+    "y": 300,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "6ab70164.5a3b7",
+    "type": "openhab2-in",
+    "z": "e8f44998.ba5178",
+    "name": "Door Open",
+    "controller": "76a5baaa.2726a4",
+    "itemname": "Garage_Door_one_Open",
+    "x": 100,
+    "y": 100,
+    "wires": [
+      [
+        "eae8853c.156e98"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "e5082fac.27d65",
+    "type": "trigger",
+    "z": "e8f44998.ba5178",
+    "op1": "",
+    "op2": "ON",
+    "op1type": "nul",
+    "op2type": "str",
+    "duration": "10",
+    "extend": false,
+    "units": "min",
+    "reset": "OFF",
+    "bytopic": "all",
+    "name": "Close in 10 mins",
+    "x": 670,
+    "y": 380,
+    "wires": [
+      [
+        "97e9cab5.66ffc8"
+      ]
+    ]
+  },
+  {
+    "id": "5a78b1ce.38b78",
+    "type": "openhab2-out",
+    "z": "e8f44998.ba5178",
+    "name": "Close Door",
+    "controller": "76a5baaa.2726a4",
+    "itemname": "Garage_Lightone_On",
+    "topic": "ItemCommand",
+    "payload": "ON",
+    "x": 1110,
+    "y": 380,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "75a5371.4dcb1c8",
+    "type": "switch",
+    "z": "e8f44998.ba5178",
+    "name": "If Garage Open",
+    "property": "garage_one_open",
+    "propertyType": "global",
+    "rules": [
+      {
+        "t": "true"
+      },
+      {
+        "t": "false"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 180,
+    "y": 300,
+    "wires": [
+      [
+        "55a2fe2.39cd1"
+      ],
+      [
+        "10a5c65a.96dbfa"
+      ]
+    ]
+  },
+  {
+    "id": "55a2fe2.39cd1",
+    "type": "switch",
+    "z": "e8f44998.ba5178",
+    "name": "If it is Dusk",
+    "property": "Dusk",
+    "propertyType": "global",
+    "rules": [
+      {
+        "t": "true"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 1,
+    "x": 410,
+    "y": 300,
+    "wires": [
+      [
+        "e5082fac.27d65",
+        "5fe36c5b.669814",
+        "3cad7468.060a3c"
+      ]
+    ]
+  },
+  {
+    "id": "77da4724.b42718",
+    "type": "alexa-remote-routine",
+    "z": "e8f44998.ba5178",
+    "name": "Alexa Closing Door",
+    "account": "d9d3cca6.f15f6",
+    "routineNode": {
+      "type": "speak",
+      "payload": {
+        "type": "regular",
+        "text": {
+          "type": "str",
+          "value": "I am closing the garage door two"
+        },
+        "devices": [
+          "G090LF1072930UAG"
+        ]
+      }
+    },
+    "x": 1130,
+    "y": 440,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "5fe36c5b.669814",
+    "type": "debug",
+    "z": "e8f44998.ba5178",
+    "name": "Alexa Door Open",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "x": 670,
+    "y": 240,
+    "wires": []
+  },
+  {
+    "id": "5cb6f2e9.c2e43c",
+    "type": "debug",
+    "z": "e8f44998.ba5178",
+    "name": "Alexa Door Close",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "x": 1130,
+    "y": 320,
+    "wires": []
+  },
+  {
+    "id": "37aea86c.d59e78",
+    "type": "link in",
+    "z": "e8f44998.ba5178",
+    "name": "Garage Check",
+    "links": [
+      "dc833a3b.9c6678"
+    ],
+    "x": 55,
+    "y": 200,
+    "wires": [
+      [
+        "75a5371.4dcb1c8"
+      ]
+    ]
+  },
+  {
+    "id": "eae8853c.156e98",
+    "type": "change",
+    "z": "e8f44998.ba5178",
+    "name": "set Garage State",
+    "rules": [
+      {
+        "t": "set",
+        "p": "garage_one_open",
+        "pt": "global",
+        "to": "payload=\"ON\"",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 350,
+    "y": 100,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "a6245c16.9bb3",
+    "type": "inject",
+    "z": "f04f08b4.7716d8",
+    "name": "",
+    "topic": "",
+    "payload": "Auto",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "x": 90,
+    "y": 120,
+    "wires": [
+      [
+        "e2333429.0309b8"
+      ]
+    ]
+  },
+  {
+    "id": "10a5c65a.96dbfa",
+    "type": "change",
+    "z": "e8f44998.ba5178",
+    "name": "Cancel Timer",
+    "rules": [
+      {
+        "t": "set",
+        "p": "reset",
+        "pt": "msg",
+        "to": "1",
+        "tot": "num"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 410,
+    "y": 380,
+    "wires": [
+      [
+        "e5082fac.27d65"
+      ]
+    ]
+  },
+  {
+    "id": "97e9cab5.66ffc8",
+    "type": "switch",
+    "z": "e8f44998.ba5178",
+    "name": "Open Check",
+    "property": "garage_one_open",
+    "propertyType": "global",
+    "rules": [
+      {
+        "t": "true"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 1,
+    "x": 870,
+    "y": 380,
+    "wires": [
+      [
+        "5a78b1ce.38b78",
+        "5cb6f2e9.c2e43c",
+        "77da4724.b42718"
+      ]
+    ]
+  },
+  {
+    "id": "93327414.0f3308",
+    "type": "inject",
+    "z": "f04f08b4.7716d8",
+    "name": "",
+    "topic": "",
+    "payload": "OFF",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "x": 90,
+    "y": 40,
+    "wires": [
+      [
+        "e2333429.0309b8"
+      ]
+    ]
+  },
+  {
+    "id": "8c803f46.71b32",
+    "type": "inject",
+    "z": "f04f08b4.7716d8",
+    "name": "",
+    "topic": "",
+    "payload": "ON",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "x": 90,
+    "y": 240,
+    "wires": [
+      [
+        "3b24c051.7f041"
+      ]
+    ]
+  },
+  {
+    "id": "bea5e894.8f7138",
+    "type": "inject",
+    "z": "f04f08b4.7716d8",
+    "name": "",
+    "topic": "",
+    "payload": "Auto",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "x": 90,
+    "y": 280,
+    "wires": [
+      [
+        "3b24c051.7f041"
+      ]
+    ]
+  },
+  {
+    "id": "404c9ae5.925b74",
+    "type": "inject",
+    "z": "f04f08b4.7716d8",
+    "name": "",
+    "topic": "",
+    "payload": "OFF",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "x": 90,
+    "y": 200,
+    "wires": [
+      [
+        "3b24c051.7f041"
+      ]
+    ]
+  },
+  {
+    "id": "940544d6.448e38",
+    "type": "inject",
+    "z": "f04f08b4.7716d8",
+    "name": "",
+    "topic": "",
+    "payload": "ON",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "x": 90,
+    "y": 400,
+    "wires": [
+      [
+        "b9c7c2b5.c9c15"
+      ]
+    ]
+  },
+  {
+    "id": "7fac4d58.4c4674",
+    "type": "inject",
+    "z": "f04f08b4.7716d8",
+    "name": "",
+    "topic": "",
+    "payload": "Auto",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "x": 90,
+    "y": 440,
+    "wires": [
+      [
+        "b9c7c2b5.c9c15"
+      ]
+    ]
+  },
+  {
+    "id": "61d99715.7ffd18",
+    "type": "inject",
+    "z": "f04f08b4.7716d8",
+    "name": "",
+    "topic": "",
+    "payload": "OFF",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "x": 90,
+    "y": 360,
+    "wires": [
+      [
+        "b9c7c2b5.c9c15"
+      ]
+    ]
+  },
+  {
+    "id": "ded81747.3a7c28",
+    "type": "openhab2-in",
+    "z": "5f5ac3ae.f5a4fc",
+    "name": "Living Motion",
+    "controller": "76a5baaa.2726a4",
+    "itemname": "LivingRoomMotion",
+    "x": 190,
+    "y": 120,
+    "wires": [
+      [
+        "9a36ac55.09176"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "9ef08b92.9941c8",
+    "type": "openhab2-out",
+    "z": "5f5ac3ae.f5a4fc",
+    "name": "Lamp",
+    "controller": "76a5baaa.2726a4",
+    "itemname": "Lamp_Switch",
+    "topic": "ItemCommand",
+    "payload": "",
+    "x": 650,
+    "y": 120,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "d5f3e72b.e0c3a8",
+    "type": "openhab2-in",
+    "z": "5f5ac3ae.f5a4fc",
+    "name": "Foyer Motion",
+    "controller": "76a5baaa.2726a4",
+    "itemname": "FoyerMotion",
+    "x": 190,
+    "y": 200,
+    "wires": [
+      [
+        "2ffcd7a1.8d63d8"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "6594b45d.ca65ec",
+    "type": "openhab2-out",
+    "z": "5f5ac3ae.f5a4fc",
+    "name": "Desk Lamp",
+    "controller": "76a5baaa.2726a4",
+    "itemname": "DeskLamp_Switch",
+    "topic": "ItemCommand",
+    "payload": "",
+    "x": 670,
+    "y": 200,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "9a36ac55.09176",
+    "type": "switch",
+    "z": "5f5ac3ae.f5a4fc",
+    "name": "If it is Night",
+    "property": "Night",
+    "propertyType": "global",
+    "rules": [
+      {
+        "t": "true"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 1,
+    "x": 430,
+    "y": 120,
+    "wires": [
+      [
+        "9ef08b92.9941c8"
+      ]
+    ]
+  },
+  {
+    "id": "2ffcd7a1.8d63d8",
+    "type": "switch",
+    "z": "5f5ac3ae.f5a4fc",
+    "name": "If it is Night",
+    "property": "Night",
+    "propertyType": "global",
+    "rules": [
+      {
+        "t": "true"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 1,
+    "x": 430,
+    "y": 200,
+    "wires": [
+      [
+        "6594b45d.ca65ec"
+      ]
+    ]
+  },
+  {
+    "id": "602d19cf.48ae08",
+    "type": "alexa-remote-routine",
+    "z": "493737aa.18b028",
+    "name": "Alexa Door Open",
+    "account": "d9d3cca6.f15f6",
+    "routineNode": {
+      "type": "speak",
+      "payload": {
+        "type": "regular",
+        "text": {
+          "type": "str",
+          "value": "The garage door two is open"
+        },
+        "devices": [
+          "G090LF1072930UAG"
+        ]
+      }
+    },
+    "x": 670,
+    "y": 300,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "e59701a6.e1862",
+    "type": "openhab2-in",
+    "z": "493737aa.18b028",
+    "name": "Door Open",
+    "controller": "76a5baaa.2726a4",
+    "itemname": "Garage_Door_two_Open",
+    "x": 100,
+    "y": 100,
+    "wires": [
+      [
+        "db32ec12.5ba6b"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "dda57ab0.609af8",
+    "type": "trigger",
+    "z": "493737aa.18b028",
+    "op1": "",
+    "op2": "ON",
+    "op1type": "nul",
+    "op2type": "str",
+    "duration": "10",
+    "extend": false,
+    "units": "min",
+    "reset": "OFF",
+    "bytopic": "all",
+    "name": "Close in 10 mins",
+    "x": 670,
+    "y": 380,
+    "wires": [
+      [
+        "8dfda504.ae3608"
+      ]
+    ]
+  },
+  {
+    "id": "4e40e8ed.96deb8",
+    "type": "openhab2-out",
+    "z": "493737aa.18b028",
+    "name": "Close Door",
+    "controller": "76a5baaa.2726a4",
+    "itemname": "Garage_Lighttwo_On",
+    "topic": "ItemCommand",
+    "payload": "ON",
+    "x": 1110,
+    "y": 380,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "83004622.483ae8",
+    "type": "switch",
+    "z": "493737aa.18b028",
+    "name": "If Garage Open",
+    "property": "garage_two_open",
+    "propertyType": "global",
+    "rules": [
+      {
+        "t": "true"
+      },
+      {
+        "t": "false"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 180,
+    "y": 300,
+    "wires": [
+      [
+        "1cce81a3.ffc54e"
+      ],
+      [
+        "d4d1570d.ea8108"
+      ]
+    ]
+  },
+  {
+    "id": "1cce81a3.ffc54e",
+    "type": "switch",
+    "z": "493737aa.18b028",
+    "name": "If it is Dusk",
+    "property": "Dusk",
+    "propertyType": "global",
+    "rules": [
+      {
+        "t": "true"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 1,
+    "x": 410,
+    "y": 300,
+    "wires": [
+      [
+        "dda57ab0.609af8",
+        "5f28bd35.07ec84",
+        "602d19cf.48ae08"
+      ]
+    ]
+  },
+  {
+    "id": "d9d5d48c.5ce3f8",
+    "type": "alexa-remote-routine",
+    "z": "493737aa.18b028",
+    "name": "Alexa Closing Door",
+    "account": "d9d3cca6.f15f6",
+    "routineNode": {
+      "type": "speak",
+      "payload": {
+        "type": "regular",
+        "text": {
+          "type": "str",
+          "value": "I am closing the garage door two."
+        },
+        "devices": [
+          "G090LF1072930UAG"
+        ]
+      }
+    },
+    "x": 1130,
+    "y": 440,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "5f28bd35.07ec84",
+    "type": "debug",
+    "z": "493737aa.18b028",
+    "name": "Alexa Door Open",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "x": 670,
+    "y": 240,
+    "wires": []
+  },
+  {
+    "id": "5b15d2ed.2c058c",
+    "type": "debug",
+    "z": "493737aa.18b028",
+    "name": "Alexa Door Close",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "x": 1130,
+    "y": 320,
+    "wires": []
+  },
+  {
+    "id": "893c3b1e.ee71f8",
+    "type": "link in",
+    "z": "493737aa.18b028",
+    "name": "Garage Check",
+    "links": [
+      "dc833a3b.9c6678"
+    ],
+    "x": 55,
+    "y": 200,
+    "wires": [
+      [
+        "83004622.483ae8"
+      ]
+    ]
+  },
+  {
+    "id": "db32ec12.5ba6b",
+    "type": "change",
+    "z": "493737aa.18b028",
+    "name": "set Garage State",
+    "rules": [
+      {
+        "t": "set",
+        "p": "garage_two_open",
+        "pt": "global",
+        "to": "payload=\"ON\"",
+        "tot": "jsonata"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 350,
+    "y": 100,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "d4d1570d.ea8108",
+    "type": "change",
+    "z": "493737aa.18b028",
+    "name": "Cancel Timer",
+    "rules": [
+      {
+        "t": "set",
+        "p": "reset",
+        "pt": "msg",
+        "to": "1",
+        "tot": "num"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 410,
+    "y": 380,
+    "wires": [
+      [
+        "dda57ab0.609af8"
+      ]
+    ]
+  },
+  {
+    "id": "8dfda504.ae3608",
+    "type": "switch",
+    "z": "493737aa.18b028",
+    "name": "Open Check",
+    "property": "garage_two_open",
+    "propertyType": "global",
+    "rules": [
+      {
+        "t": "true"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 1,
+    "x": 870,
+    "y": 380,
+    "wires": [
+      [
+        "4e40e8ed.96deb8",
+        "5b15d2ed.2c058c",
+        "d9d5d48c.5ce3f8"
+      ]
+    ]
+  }
+]
