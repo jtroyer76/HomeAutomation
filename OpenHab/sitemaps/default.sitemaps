@@ -1,0 +1,8 @@
+sitemap default label="Home"
+{
+    Switch item=Garage_One_Switch label="Garage One Open"
+    Switch item=Garage_One_State label="Garage One State"
+
+    Switch item=Garage_Two_Switch label="Garage Two Open"
+    Switch item=Garage_Two_State label="Garage Two State"
+}

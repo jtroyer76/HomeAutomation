@@ -1,0 +1,6 @@
+Switch Garage_One_State "Door One State" <garagedoor> { channel="mqtt:homie300:4cf796ab:382b78037b06:door_one#open" }
+Switch Garage_One_Switch "Door One Open" <switch> { channel="mqtt:homie300:4cf796ab:382b78037b06:lightone#on" }
+
+Switch Garage_Two_State "Door Two State" <garagedoor> { channel="mqtt:homie300:4cf796ab:382b78037b06:door_two#open" }
+Switch Garage_Two_Switch "Door Two Open" <switch> { channel="mqtt:homie300:4cf796ab:382b78037b06:lighttwo#on" }
+
