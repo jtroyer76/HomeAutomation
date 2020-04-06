@@ -1,8 +1,8 @@
 #include <Homie.h>
 #include <NewPing.h>
 
-#define DEBOUNCE_DELAY 100
-#define MAX_DISTANCE 200
+#define DEBOUNCE_DELAY 200
+#define MAX_DISTANCE 244
 #define TRIGGER_DISTANCE 50
 #define GARAGE_TRIGGER_DURATION 500
 
@@ -75,7 +75,7 @@ void loopHandler(){
   // Door 1
   /////////////////
   unsigned int distance1 = sonar1.ping_cm();
-  int door1Sensor = distance1 < TRIGGER_DISTANCE;
+  bool door1Sensor = (distance1 != 0) && (distance1 < TRIGGER_DISTANCE);
 
   if (door1Sensor != lastDoor1State) {
     lastDebounce1Time = millis();
@@ -104,7 +104,7 @@ void loopHandler(){
   // Door 2
   /////////////////
   unsigned int distance2 = sonar2.ping_cm();
-  int door2Sensor = distance2 < TRIGGER_DISTANCE;
+  int door2Sensor = (distance2 != 0) && (distance2 < TRIGGER_DISTANCE);
 
   if (door2Sensor != lastDoor2State) {
     lastDebounce2Time = millis();
